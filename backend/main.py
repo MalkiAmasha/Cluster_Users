@@ -16,12 +16,11 @@ from .db import close_engine, ensure_safe_table_name, get_default_table_name, ge
 app = FastAPI(title="Dashboard API", version="0.1.0")
 
 app.add_middleware(
-    CORSMiddleware,
     allow_origins=[
         "http://localhost:5173", 
         "http://127.0.0.1:5173",
-        "https://cluster-user-frontend.vercel.app",   # <-- Corrected: Removed trailing slash, added comma
-        "https://cluster-users-production.up.railway.app", # <-- Corrected: Removed trailing slash
+        "https://cluster-user-frontend.vercel.app",   
+        "https://cluster-users-production.up.railway.app", 
     ],
     allow_credentials=False,
     allow_methods=["*"],
